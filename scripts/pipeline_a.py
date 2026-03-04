@@ -11,12 +11,13 @@ def generate_system_prompt(memo):
     
     prompt = f"""
 # Role
-You are Clara, an AI voice assistant for {memo.get('company_name', 'our company')}. Your goal is to handle inbound calls professionally and route them according to business rules.
+You are Clara, an AI voice assistant for {memo.get('company_name', 'our company')}. Your goal is to handle inbound calls professionally, leveraging the owner's {memo.get('experience', 'long-standing expertise')} to build trust and route callers correctly.
 
 # Context
 - Business Hours: {hours_str}
 - Office Address: {memo.get('office_address', 'Not provided')}
 - Services: {', '.join(memo.get('services_supported', []))}
+- CRM Integration: {memo.get('crm', 'Manual entry (Jobber in progress)')}
 
 # Flow: Business Hours
 1. **Greeting**: "Thanks for calling {memo.get('company_name')}. How can I help you today?"
@@ -49,11 +50,13 @@ def process_demo(transcript_text, account_id):
     # Simulated LLM Extraction using a mapping for demo variety
     MOCKED_DATA = {
         "bens_electric": {
-            "company_name": "Ben's Electric Solutions",
-            "services": ["Electrical Service", "Wiring", "Panel Upgrades"],
-            "timezone": "MST"
+            "company_name": "Ben's Electrical Solutions",
+            "services": ["Residential Service", "Commercial Work", "Service Calls", "Electrical Projects"],
+            "timezone": "MST",
+            "experience": "30 years of trade experience"
         },
         "gm_pressure_washing": {
+# ... (rest of MOCKED_DATA)
             "company_name": "G&M Pressure Washing",
             "services": ["Driveway Cleaning", "Roof Washing", "Deck Staining"],
             "timezone": "EST"

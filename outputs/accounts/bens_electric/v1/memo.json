@@ -1,6 +1,6 @@
 {
   "account_id": "bens_electric",
-  "company_name": "Ben's Electric Solutions",
+  "company_name": "Ben's Electrical Solutions",
   "business_hours": {
     "days": [
       "Monday",
@@ -14,9 +14,10 @@
     "timezone": "MST"
   },
   "services_supported": [
-    "Electrical Service",
-    "Wiring",
-    "Panel Upgrades"
+    "Residential Service",
+    "Commercial Work",
+    "Service Calls",
+    "Electrical Projects"
   ],
   "emergency_definition": [
     "Equipment failure",
@@ -26,7 +27,7 @@
   "call_transfer_rules": {
     "timeouts_seconds": 30,
     "retries": 1,
-    "announcement": "I'll get a professional from Ben's Electric Solutions on the line for you immediately."
+    "announcement": "I'll get a professional from Ben's Electrical Solutions on the line for you immediately."
   },
   "questions_or_unknowns": [
     "Exact office address",

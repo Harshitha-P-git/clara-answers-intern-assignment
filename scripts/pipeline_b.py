@@ -18,8 +18,9 @@ def process_onboarding(onboarding_input, account_id):
     # Simulated Merging (Onboarding overrides Demo)
     MOCKED_ONBOARDING = {
         "bens_electric": {
-            "address": "123 Business Way, Calgary, AB",
-            "owner": "Ben Penoyer (Owner)"
+            "address": "123 Business Way, Denver, CO",
+            "owner": "Ben Penoyer (Owner - 30yr Professional)",
+            "crm": "Jobber CRM"
         },
         "gm_pressure_washing": {
             "address": "456 Clean St, Orlando, FL",

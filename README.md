@@ -1,7 +1,7 @@
 # Clara Answers: Zero-Cost Automation Pipeline
 
 ## 🎥 Video Demonstration
-**Watch the submission video here: https://www.loom.com/share/4a863d6863124f8098273ab9a6b807ea**
+**Watch the submission video here: https://www.loom.com/share/a1b5a630a9df4735b23be099c5aee8e1**
 
 This project automates the creation and update of Retell AI Voice Agent configurations from Demo and Onboarding call transcripts.
 

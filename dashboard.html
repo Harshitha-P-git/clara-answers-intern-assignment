@@ -420,8 +420,11 @@
         </div>
     </div>
 
+    <!-- Load Local Data Script -->
+    <script src="outputs/dashboard_data.js"></script>
+
     <script>
-        async function openDiff(accountId) {
+        function openDiff(accountId) {
             const modal = document.getElementById('diffModal');
             const v1Pre = document.getElementById('v1Content');
             const v2Pre = document.getElementById('v2Content');
@@ -430,20 +433,15 @@
             title.innerText = `Visual Configuration Diff: ${accountId.replace(/_/g, ' ')}`;
             modal.style.display = 'flex';
 
-            try {
-                const response1 = await fetch(`outputs/accounts/${accountId}/v1/agent_spec.json`);
-                const response2 = await fetch(`outputs/accounts/${accountId}/v2/agent_spec.json`);
-
-                const v1Data = await response1.json();
-                const v2Data = await response2.json();
-
-                v1Pre.innerText = JSON.stringify(v1Data, null, 2);
-                v2Pre.innerText = JSON.stringify(v2Data, null, 2);
-
+            // Use DASHBOARD_DATA instead of fetch
+            if (window.DASHBOARD_DATA && window.DASHBOARD_DATA.accounts[accountId]) {
+                const data = window.DASHBOARD_DATA.accounts[accountId];
+                v1Pre.innerText = JSON.stringify(data.v1, null, 2);
+                v2Pre.innerText = JSON.stringify(data.v2, null, 2);
                 highlightDiffs(v1Pre, v2Pre);
-            } catch (error) {
-                v1Pre.innerText = "Error loading v1 data.";
-                v2Pre.innerText = "Error loading v2 data. Ensure batch script has been run.";
+            } else {
+                v1Pre.innerText = "Error: Dashboard data not found.";
+                v2Pre.innerText = "Please run 'python scripts/process_batch.py' to generate data.";
             }
         }
 

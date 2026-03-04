@@ -52,9 +52,19 @@ def run_batch():
     # Save metrics and task tracker
     with open("outputs/tasks.json", "w") as f:
         json.dump({"metrics": metrics, "tasks": tasks}, f, indent=2)
+
+    # Generate dashboard_data.js for local file compatibility
+    db_data = {"metrics": metrics, "accounts": {}}
+    for acc in accounts:
+        with open(f"outputs/accounts/{acc}/v1/agent_spec.json", "r") as f: v1 = json.load(f)
+        with open(f"outputs/accounts/{acc}/v2/agent_spec.json", "r") as f: v2 = json.load(f)
+        db_data["accounts"][acc] = {"v1": v1, "v2": v2}
+    
+    with open("outputs/dashboard_data.js", "w") as f:
+        f.write(f"window.DASHBOARD_DATA = {json.dumps(db_data, indent=2)};")
     
     print(f"\nBatch processing complete for all {metrics['total_files_processed']} files.")
-    print("Summary Metrics & Task tracker updated: outputs/tasks.json")
+    print("Dashboard Data Script generated: outputs/dashboard_data.js")
 
 if __name__ == "__main__":
     run_batch()

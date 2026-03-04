@@ -62,11 +62,14 @@ To submit your assignment, you need to upload this folder to a GitHub repository
 - Run `python scripts/process_batch.py` to generate the full dataset (10 samples).
 - Open `dashboard.html` in any browser to view a summary of the accounts and generated artifacts.
 
+## System Features
+- **Neural Dashboard**: A premium Indigo dashboard for real-time monitoring.
+- **Visual Diff Viewer**: Interactive side-by-side comparison of v1 vs v2 configurations.
+
 ## Known Limitations
 - Extraction is currently simulated for the demo. In production, this would use a zero-cost LLM API (like Groq or local Ollama).
 - n8n nodes use local paths which need adjustment per machine.
 
 ## Future Improvements
 - Integrate with a real task tracker API (Asana/Trello).
-- Add a React-based "Diff Viewer" for better visibility of v1 vs v2.
 - Implement real-time transcription using local Whisper.

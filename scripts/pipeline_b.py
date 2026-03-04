@@ -16,13 +16,37 @@ def process_onboarding(onboarding_input, account_id):
         memo_v1 = json.load(f)
         
     # Simulated Merging (Onboarding overrides Demo)
-    # In practice, this would be LLM-based or a structured form merge.
+    MOCKED_ONBOARDING = {
+        "bens_electric": {
+            "address": "123 Business Way, Calgary, AB",
+            "owner": "Ben Penoyer (Owner)"
+        },
+        "gm_pressure_washing": {
+            "address": "456 Clean St, Orlando, FL",
+            "owner": "Greg Miller (Founder)"
+        },
+        "hvac_pros": {
+            "address": "789 Cold Blvd, Seattle, WA",
+            "owner": "Sarah Cooling (Operations)"
+        },
+        "fire_safe_systems": {
+            "address": "101 Safety Ln, Chicago, IL",
+            "owner": "Chief Mike (Safety Lead)"
+        },
+        "elite_sprinklers": {
+            "address": "202 Water Rd, Phoenix, AZ",
+            "owner": "Bill Grass (Manager)"
+        }
+    }
+    
+    onboard = MOCKED_ONBOARDING.get(account_id, MOCKED_ONBOARDING["bens_electric"])
+    
     memo_v2 = memo_v1.copy()
     memo_v2.update({
-        "office_address": "123 Business Way, Calgary, AB",
+        "office_address": onboard["address"],
         "emergency_routing_rules": {
-            "primary_contact": "Ben Penoyer (Owner)",
-            "order": ["Ben Penoyer", "On-call Tech"],
+            "primary_contact": onboard["owner"],
+            "order": [onboard["owner"].split(' (')[0], "On-call Tech"],
             "fallback": "Message to Slack"
         },
         "questions_or_unknowns": [],

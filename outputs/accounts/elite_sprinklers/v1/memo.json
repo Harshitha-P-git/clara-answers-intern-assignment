@@ -1,6 +1,6 @@
 {
   "account_id": "elite_sprinklers",
-  "company_name": "Ben's Electric Solutions",
+  "company_name": "Elite Sprinklers",
   "business_hours": {
     "days": [
       "Monday",
@@ -14,19 +14,18 @@
     "timezone": "MST"
   },
   "services_supported": [
-    "Electrical Service",
-    "Wiring",
-    "Panel Upgrades"
+    "Spring Start-up",
+    "Head Replacement"
   ],
   "emergency_definition": [
-    "Power outage",
-    "Sparking wires",
-    "Smell of burning"
+    "Equipment failure",
+    "Safety hazard",
+    "Burst pipe"
   ],
   "call_transfer_rules": {
     "timeouts_seconds": 30,
     "retries": 1,
-    "announcement": "I'll get an electrician on the line for you immediately."
+    "announcement": "I'll get a professional from Elite Sprinklers on the line for you immediately."
   },
   "questions_or_unknowns": [
     "Exact office address",

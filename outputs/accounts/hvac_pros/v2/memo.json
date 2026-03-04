@@ -1,6 +1,6 @@
 {
   "account_id": "hvac_pros",
-  "company_name": "Ben's Electric Solutions",
+  "company_name": "HVAC Pros",
   "business_hours": {
     "days": [
       "Monday",
@@ -11,30 +11,30 @@
     ],
     "start": "8:00 AM",
     "end": "5:00 PM",
-    "timezone": "MST"
+    "timezone": "PST"
   },
   "services_supported": [
-    "Electrical Service",
-    "Wiring",
-    "Panel Upgrades"
+    "AC Repair",
+    "Furnace Tuning",
+    "Duct Cleaning"
   ],
   "emergency_definition": [
-    "Power outage",
-    "Sparking wires",
-    "Smell of burning"
+    "Equipment failure",
+    "Safety hazard",
+    "Burst pipe"
   ],
   "call_transfer_rules": {
     "timeouts_seconds": 30,
     "retries": 1,
-    "announcement": "I'll get an electrician on the line for you immediately."
+    "announcement": "I'll get a professional from HVAC Pros on the line for you immediately."
   },
   "questions_or_unknowns": [],
   "version": "v2",
-  "office_address": "123 Business Way, Calgary, AB",
+  "office_address": "789 Cold Blvd, Seattle, WA",
   "emergency_routing_rules": {
-    "primary_contact": "Ben Penoyer (Owner)",
+    "primary_contact": "Sarah Cooling (Operations)",
     "order": [
-      "Ben Penoyer",
+      "Sarah Cooling",
       "On-call Tech"
     ],
     "fallback": "Message to Slack"

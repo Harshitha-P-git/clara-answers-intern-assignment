@@ -46,23 +46,52 @@ You are Clara, an AI voice assistant for {memo.get('company_name', 'our company'
     return prompt.strip()
 
 def process_demo(transcript_text, account_id):
-    # Simulated LLM Extraction
-    # In a real scenario, this would call an LLM API with the memo_schema.
+    # Simulated LLM Extraction using a mapping for demo variety
+    MOCKED_DATA = {
+        "bens_electric": {
+            "company_name": "Ben's Electric Solutions",
+            "services": ["Electrical Service", "Wiring", "Panel Upgrades"],
+            "timezone": "MST"
+        },
+        "gm_pressure_washing": {
+            "company_name": "G&M Pressure Washing",
+            "services": ["Driveway Cleaning", "Roof Washing", "Deck Staining"],
+            "timezone": "EST"
+        },
+        "hvac_pros": {
+            "company_name": "HVAC Pros",
+            "services": ["AC Repair", "Furnace Tuning", "Duct Cleaning"],
+            "timezone": "PST"
+        },
+        "fire_safe_systems": {
+            "company_name": "Fire Safe Systems",
+            "services": ["Extinguisher Inspection", "Sprinkler Repair"],
+            "timezone": "CST"
+        },
+        "elite_sprinklers": {
+            "company_name": "Elite Sprinklers",
+            "services": ["Spring Start-up", "Head Replacement"],
+            "timezone": "MST"
+        }
+    }
+    
+    data = MOCKED_DATA.get(account_id, MOCKED_DATA["bens_electric"])
+    
     memo = {
         "account_id": account_id,
-        "company_name": "Ben's Electric Solutions",
+        "company_name": data["company_name"],
         "business_hours": {
             "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "start": "8:00 AM",
             "end": "5:00 PM",
-            "timezone": "MST"
+            "timezone": data["timezone"]
         },
-        "services_supported": ["Electrical Service", "Wiring", "Panel Upgrades"],
-        "emergency_definition": ["Power outage", "Sparking wires", "Smell of burning"],
+        "services_supported": data["services"],
+        "emergency_definition": ["Equipment failure", "Safety hazard", "Burst pipe"],
         "call_transfer_rules": {
             "timeouts_seconds": 30,
             "retries": 1,
-            "announcement": "I'll get an electrician on the line for you immediately."
+            "announcement": f"I'll get a professional from {data['company_name']} on the line for you immediately."
         },
         "questions_or_unknowns": ["Exact office address", "Emergency routing fallback"],
         "version": "v1"

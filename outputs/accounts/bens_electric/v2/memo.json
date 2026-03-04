@@ -19,14 +19,14 @@
     "Panel Upgrades"
   ],
   "emergency_definition": [
-    "Power outage",
-    "Sparking wires",
-    "Smell of burning"
+    "Equipment failure",
+    "Safety hazard",
+    "Burst pipe"
   ],
   "call_transfer_rules": {
     "timeouts_seconds": 30,
     "retries": 1,
-    "announcement": "I'll get an electrician on the line for you immediately."
+    "announcement": "I'll get a professional from Ben's Electric Solutions on the line for you immediately."
   },
   "questions_or_unknowns": [],
   "version": "v2",

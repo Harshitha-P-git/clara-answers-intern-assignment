@@ -1,0 +1,29 @@
+{
+  "account_id": "string",
+  "company_name": "string",
+  "business_hours": {
+    "days": ["string"],
+    "start": "string",
+    "end": "string",
+    "timezone": "string"
+  },
+  "office_address": "string",
+  "services_supported": ["string"],
+  "emergency_definition": ["string"],
+  "emergency_routing_rules": {
+    "primary_contact": "string",
+    "order": ["string"],
+    "fallback": "string"
+  },
+  "non_emergency_routing_rules": "string",
+  "call_transfer_rules": {
+    "timeouts_seconds": 0,
+    "retries": 0,
+    "announcement": "string"
+  },
+  "integration_constraints": ["string"],
+  "after_hours_flow_summary": "string",
+  "office_hours_flow_summary": "string",
+  "questions_or_unknowns": ["string"],
+  "notes": "string"
+}

@@ -1,0 +1,43 @@
+{
+  "account_id": "bens_electric",
+  "company_name": "Ben's Electric Solutions",
+  "business_hours": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start": "8:00 AM",
+    "end": "5:00 PM",
+    "timezone": "MST"
+  },
+  "services_supported": [
+    "Electrical Service",
+    "Wiring",
+    "Panel Upgrades"
+  ],
+  "emergency_definition": [
+    "Power outage",
+    "Sparking wires",
+    "Smell of burning"
+  ],
+  "call_transfer_rules": {
+    "timeouts_seconds": 30,
+    "retries": 1,
+    "announcement": "I'll get an electrician on the line for you immediately."
+  },
+  "questions_or_unknowns": [],
+  "version": "v2",
+  "office_address": "123 Business Way, Calgary, AB",
+  "emergency_routing_rules": {
+    "primary_contact": "Ben Penoyer (Owner)",
+    "order": [
+      "Ben Penoyer",
+      "On-call Tech"
+    ],
+    "fallback": "Message to Slack"
+  },
+  "notes": "Confirmed address and routing in onboarding call."
+}

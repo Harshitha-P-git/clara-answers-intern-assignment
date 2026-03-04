@@ -1,0 +1,105 @@
+{
+    "name": "Clara Answers Automation",
+    "nodes": [
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours",
+                            "hoursInterval": 1
+                        }
+                    ]
+                }
+            },
+            "id": "e0d1f77e-2f04-4e4b-8f52-8c9a4e3e6012",
+            "name": "When new transcript arrives",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1,
+            "position": [
+                460,
+                240
+            ]
+        },
+        {
+            "parameters": {
+                "command": "python scripts/pipeline_a.py"
+            },
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "name": "Run Demo Extraction",
+            "type": "n8n-nodes-base.executeCommand",
+            "typeVersion": 1,
+            "position": [
+                680,
+                240
+            ]
+        },
+        {
+            "parameters": {
+                "command": "python scripts/pipeline_b.py"
+            },
+            "id": "b2c3d4e5-f6a7-8901-bcde-f1234567890a",
+            "name": "Run Onboarding Update",
+            "type": "n8n-nodes-base.executeCommand",
+            "typeVersion": 1,
+            "position": [
+                900,
+                240
+            ]
+        },
+        {
+            "parameters": {
+                "content": "## Account Processed\nPipeline completed successfully for {{ $node[\"Run Demo Extraction\"].json[\"account_id\"] }}"
+            },
+            "id": "c3d4e5f6-a7b8-9012-cdef-1234567890ab",
+            "name": "Update Task Tracker",
+            "type": "n8n-nodes-base.noOp",
+            "typeVersion": 1,
+            "position": [
+                1120,
+                240
+            ]
+        }
+    ],
+    "connections": {
+        "When new transcript arrives": {
+            "main": [
+                [
+                    {
+                        "node": "Run Demo Extraction",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Run Demo Extraction": {
+            "main": [
+                [
+                    {
+                        "node": "Run Onboarding Update",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Run Onboarding Update": {
+            "main": [
+                [
+                    {
+                        "node": "Update Task Tracker",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "meta": {
+        "instanceId": "f0d1e2d3c4b5a697"
+    }
+}

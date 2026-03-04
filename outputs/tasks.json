@@ -1,0 +1,52 @@
+[
+  {
+    "account_id": "bens_electric",
+    "stage": "v1_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "bens_electric",
+    "stage": "v2_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "gm_pressure_washing",
+    "stage": "v1_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "gm_pressure_washing",
+    "stage": "v2_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "hvac_pros",
+    "stage": "v1_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "hvac_pros",
+    "stage": "v2_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "fire_safe_systems",
+    "stage": "v1_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "fire_safe_systems",
+    "stage": "v2_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "elite_sprinklers",
+    "stage": "v1_complete",
+    "status": "Success"
+  },
+  {
+    "account_id": "elite_sprinklers",
+    "stage": "v2_complete",
+    "status": "Success"
+  }
+]

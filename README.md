@@ -7,9 +7,9 @@ This project automates the creation and update of Retell AI Voice Agent configur
 
 ## Architecture
 
-1.  **Ingestion**: Transcripts are placed in a local folder.
-2.  **Pipeline A (Demo -> v1)**: Extracts initial business rules into a structured **Account Memo JSON** and generates a **Retell Agent Draft Spec**.
-3.  **Pipeline B (Onboarding -> v2)**: Merges onboarding data with v1 assets, overrides outdated info, and generates a **v2 Memo**, **v2 Agent Spec**, and a **Changelog**.
+1.  **Ingestion**: Transcripts processed from source links (Fireflies).
+2.  **Pipeline A (Demo -> v1)**: Captures **directional assumptions**. Flags missing data in `questions_or_unknowns` to avoid hallucination, generating a preliminary agent spec.
+3.  **Pipeline B (Onboarding -> v2)**: Ingests **operational precision** data. Overrides assumptions, resolves conflicts explicitly, and generates a production-ready spec with a full `changelog.md`.
 4.  **Orchestration**: Managed via **n8n** (self-hosted/local) using command execution nodes.
 5.  **Storage**: Versioned JSON files in the `/outputs` directory.
 
